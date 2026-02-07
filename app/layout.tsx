@@ -2,14 +2,15 @@ import React from "react"
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Script from 'next/script'
+
 import './globals.css'
 
 const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Happy Rose Day, My Love 🌹',
-  description: 'A sweet Rose Day micro-experience 🌹❤️',
+  title: 'Will You Be My Valentine?',
+  description: 'A cute Valentine\'s Day micro-experience ❤️',
   generator: 'v0.app',
   themeColor: '#f472b6',
   viewport: {
