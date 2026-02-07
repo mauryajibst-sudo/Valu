@@ -6,25 +6,17 @@ interface Heart {
   id: number
   left: number
   delay: number
-  duration: number
-  emoji: string
-  size: number
 }
-
-const heartEmojis = ['❤️', '💕', '💖', '💗', '💓', '💝', '🌹']
 
 export function FloatingHearts() {
   const [hearts, setHearts] = useState<Heart[]>([])
 
   useEffect(() => {
-    // Generate floating hearts with variety
-    const initialHearts = Array.from({ length: 15 }, (_, i) => ({
+    // Generate floating hearts
+    const initialHearts = Array.from({ length: 8 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
-      delay: Math.random() * 3,
-      duration: 3 + Math.random() * 2,
-      emoji: heartEmojis[Math.floor(Math.random() * heartEmojis.length)],
-      size: 24 + Math.random() * 16,
+      delay: Math.random() * 2,
     }))
     setHearts(initialHearts)
   }, [])
@@ -34,16 +26,14 @@ export function FloatingHearts() {
       {hearts.map((heart) => (
         <div
           key={heart.id}
-          className="absolute text-primary/35 animate-floatDown"
+          className="absolute text-primary/40 text-4xl animate-float"
           style={{
             left: `${heart.left}%`,
             top: '-50px',
             animationDelay: `${heart.delay}s`,
-            animationDuration: `${heart.duration}s`,
-            fontSize: `${heart.size}px`,
           }}
         >
-          {heart.emoji}
+          ❤️
         </div>
       ))}
     </div>
